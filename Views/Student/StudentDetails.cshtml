@@ -1,0 +1,48 @@
+﻿
+@{
+    ViewData["Title"] = "StudentDetails";
+}
+
+<h1>StudentDetails</h1>
+<form asp-action="StudentDetails">
+    <table>
+         <tr>
+            <td>Enter Roll No</td>
+            <td>
+                @Html.TextBox("rollno")
+            </td>
+        </tr>
+        
+        <tr>
+            <td>Enter Name</td>
+            <td>
+                @Html.TextBox("name")
+            </td>
+        </tr>
+
+        <tr>
+            <td>Enter Percentage</td>
+            <td>
+                @Html.TextBox("Percentage")
+            </td>
+        </tr>
+
+        <tr>
+            <td>Stream</td>
+            <td>
+                @Html.RadioButton("stream","CSE") CSE
+                @Html.RadioButton("stream","IT") IT
+                @Html.RadioButton("stream","EXTC") EXTC
+                @Html.RadioButton("stream","MECH") MECH
+            </td>
+        </tr>
+
+        <tr>
+            <td></td>
+            <td>
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </td>
+        </tr>
+    </table>
+</form>
+

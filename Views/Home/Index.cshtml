@@ -1,0 +1,48 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+<h1>Student ViewData</h1>
+
+@if (ViewData["studlist"] != null)
+{
+    <table  class="table" table-bordered">
+    <tr>
+        <th>Name</th>
+        <th>City</th>
+        <th>Percentage</th>
+    </tr>
+    @foreach (Student s in (IEnumerable<Student>)ViewData["studlist"])
+    {
+        <tr>
+            <td>@s.Name</td>
+            <td>@s.City</td>
+            <td>@s.Percentage</td>
+        </tr>
+    }
+    </table>
+}
+
+
+
+<h1>Using ViewBag</h1>
+
+    <table class="table" table-bordered">
+        <tr>
+            <th>Name</th>
+            <th>City</th>
+            <th>Salery</th>
+        </tr>
+        @foreach (Employee e in ViewBag.List)
+        {
+            <tr>
+                <td>@e.Name</td>
+                <td>@e.City</td>
+                <td>@e.Salery</td>
+            </tr>
+        }
+    </table>
+
+
+<h1>@TempData["message"]</h1>
